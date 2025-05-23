@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MetaWriter: Personalized Handwritten Text Recognition Using Meta-Learned Prompt Tuning">
+  <meta property="og:title" content="MetaWriter: Personalized Handwritten Text Recognition"/>
+  <meta property="og:description" content="An efficient framework for writer-specific handwritten text recognition using meta-learned prompt tuning"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="MetaWriter: Personalized Handwritten Text Recognition">
+  <meta name="twitter:description" content="An efficient framework for writer-specific handwritten text recognition using meta-learned prompt tuning">
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="handwritten text recognition, meta-learning, prompt tuning, few-shot learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MetaWriter: Personalized Handwritten Text Recognition Using Meta-Learned Prompt Tuning</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo512.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">MetaWriter: Personalized Handwritten Text Recognition Using Meta-Learned Prompt Tuning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Wenhao Gu<sup>1</sup>,</span>
+              <span class="author-block">Li Gu<sup>1</sup>,</span>
+              <span class="author-block">Ching Yee Suen<sup>1</sup>,</span>
+              <span class="author-block">Yang Wang<sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Department of Computer Science and Software Engineering, Concordia University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/YOUR_PAPER_ID.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://github.com/YOUR_GITHUB_REPO" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <!-- Dataset Link -->
+            <span class="link-block">
+              <a href="https://YOUR_DATASET_LINK" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-database"></i>
+              </span>
+              <span>Dataset</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- Paper abstract -->
+<hr>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advancements in handwritten text recognition (HTR) have enabled the effective conversion of handwritten text to digital formats. However, achieving robust recognition across diverse writing styles remains challenging. Traditional HTR methods lack writer-specific personalization at test time due to limitations in model architecture and training strategies. Existing attempts to bridge this gap, through gradient-based meta-learning, still require labeled examples and suffer from parameter-inefficient fine-tuning, leading to substantial computational and memory overhead.
+          </p>
+          <p>
+            To overcome these challenges, we propose an efficient framework that formulates personalization as prompt tuning, incorporating an auxiliary image reconstruction task with a self-supervised loss to guide prompt adaptation with unlabeled test-time examples. To ensure self-supervised loss effectively minimizes text recognition error, we leverage meta-learning to learn the optimal initialization of the prompts. As a result, our method allows the model to efficiently capture unique writing styles by updating less than 1% of its parameters and eliminating the need for time-intensive annotation processes.
+          </p>
+          <p>
+            We validate our approach on the RIMES and IAM Handwriting Database benchmarks, where it consistently outperforms previous state-of-the-art methods while using 20x fewer parameters. We believe this represents a significant advancement in personalized handwritten text recognition, paving the way for more reliable and practical deployment in resource-constrained scenarios.
+          </p>
+        </div>
+        
+        <hr>
+        <h2 class="title is-3">Challenges in Handwritten Text Recognition</h2>
+        <img src="static/images/challenge.png" alt="Handwriting style variations" class="center-img"/>
+        <div class="content has-text-justified">
+          <p>
+            The left panel shows examples of handwritten text from different writers, highlighting variations in letter shapes, spacing, and stroke patterns. The right panel presents the model's predictions for each example, demonstrating the difficulty in accurately recognizing diverse handwriting styles.
+          </p>
+        </div>
+        
+        <hr>
+        <h2 class="title is-3">Method Overview</h2>
+        <img src="static/images/method.png" alt="Method overview" class="center-img"/>
+        <div class="content has-text-justified">
+          <p>
+            Our framework during training: The handwritten texts from a specific writer are divided into an unlabeled support set and a labeled query set. The images in the support set are masked, padded with meta prompt vectors, and passed through a shared image encoder, followed by reconstruction using a Masked Autoencoder (MAE)'s decoder. The writer-specific prompt vectors are derived in the inner loop using a self-supervised loss, which optimizes the meta prompt vectors through a single gradient step. These writer-specific prompt vectors are then padded with the document images from the query set and used as input to the HTR model to predict a sequence of tokens representing the writing content.
+          </p>
+        </div>
+        
+        <hr>
+        <h2 class="title is-3">Experimental Results</h2>
+        <h3 class="title is-4">Performance Comparison</h3>
+        <img src="static/images/results.png" alt="Performance comparison" class="center-img"/>
+        <div class="content has-text-justified">
+          <p>
+            Comparison with state-of-the-art methods on the IAM and RIMES datasets. Our method achieves outstanding performance with a 5-shot adaptation setup, outperforming other methods in both Character Error Rate (CER) and Word Error Rate (WER).
+          </p>
+        </div>
+        
+        <h3 class="title is-4">Parameter Efficiency</h3>
+        <img src="static/images/parameters.png" alt="Parameter efficiency" class="center-img"/>
+        <div class="content has-text-justified">
+          <p>
+            Our approach requires only 0.08M parameters to be trainable during personalization, compared to 5.9M parameters in the decoder and 1.7M parameters in the encoder that remain untouched. This means our approach optimizes just 1% of the total model parameters, making it highly efficient for deployment in resource-constrained environments.
+          </p>
+        </div>
+        
+        <hr>
+        <h2 class="title is-3">Visual Results</h2>
+        <img src="static/images/visual_results.png" alt="Visual results" class="center-img"/>
+        <div class="content has-text-justified">
+          <p>
+            Examples of handwriting transcription corrections by MetaWriter from IAM and RIMES datasets. The figure shows original handwriting samples (left), the initial prediction marked with errors highlighted in red (center), and the corrected prediction after applying MetaWriter, highlighted in green (right).
+          </p>
+        </div>
+        
+        <hr>
+        <h2 class="title is-3">BibTeX Citation</h2>
+        <div class="content">
+          <pre><code>@article{gu2024metawriter,
+  title={MetaWriter: Personalized Handwritten Text Recognition Using Meta-Learned Prompt Tuning},
+  author={Gu, Wenhao and Gu, Li and Suen, Ching Yee and Wang, Yang},
+  journal={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website template was adapted from <a href="https://nerfies.github.io/">Nerfies website</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
